@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coffee Happy, Plymouth MA, Build Your Own Blend</title>
+<meta name="description" content="Coffee Happy is a hands-on coffee shop in Plymouth, Massachusetts. Pick your beans, mix your ratio, grind it fresh, and take home a blend with your name on it.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">&#9749;</span>
+      <span class="brand-name">Coffee Happy</span>
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="#grind-bar">The Grind Bar</a>
+      <a href="#mixer">Try a Blend</a>
+      <a href="#blends">House Blends</a>
+      <a href="#tasting">Tasting Station</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Plymouth, Massachusetts</p>
+      <h1>Your blend. Your grind. Your cup.</h1>
+      <p class="lede">Coffee Happy is a hands-on coffee shop where you build your own blend from 12 to 15 single-origin beans, grind it fresh on commercial grinders, and take it home with your name on the label.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#grind-bar">How the Grind Bar works</a>
+        <a class="btn btn-ghost" href="#blends">See the house blends</a>
+      </div>
+      <p class="hero-note">Coming soon to Plymouth. Beans sold by the ounce or pound.</p>
+    </div>
+  </section>
+
+  <section class="section" id="grind-bar">
+    <div class="wrap">
+      <p class="eyebrow">The Custom Grind Bar</p>
+      <h2>The coffee aisle, rebuilt as a workshop.</h2>
+      <p class="section-intro">No bags chosen for you. You pick the beans, you set the ratio, you choose the grind, and you name the blend.</p>
+      <ol class="steps">
+        <li>
+          <span class="step-num">1</span>
+          <h3>Pick your beans</h3>
+          <p>Twelve to fifteen single origins line the dispenser wall, light to dark, plus decaf. Start with a base you love or a bean you have never tried.</p>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <h3>Mix your ratio</h3>
+          <p>Scales and mixing bowls are on the station. A good starting point is 70 percent Colombian Supremo and 30 percent Ethiopian Yirgacheffe.</p>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <h3>Grind it your way</h3>
+          <p>Commercial retail grinders are set up with clear guides for French Press, Drip, and Espresso, so your grind matches your brewer.</p>
+        </li>
+        <li>
+          <span class="step-num">4</span>
+          <h3>Name it and label it</h3>
+          <p>A tablet kiosk prints your label with your blend name, the roast date, flavor notes, and your bean ratio.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section-tint" id="mixer">
+    <div class="wrap">
+      <p class="eyebrow">Try it here first</p>
+      <h2>Try a blend right now.</h2>
+      <p class="section-intro">Pick two beans, set the ratio, name it. This is the same flow you will use at the bar.</p>
+      <div class="mixer">
+        <div class="mixer-controls">
+          <label class="field">
+            <span>First bean</span>
+            <select id="bean-a">
+              <option value="Colombian Supremo">Colombian Supremo</option>
+              <option value="Ethiopian Yirgacheffe">Ethiopian Yirgacheffe</option>
+              <option value="Sumatra Mandheling">Sumatra Mandheling</option>
+              <option value="Kenya AA">Kenya AA</option>
+              <option value="Guatemala Antigua">Guatemala Antigua</option>
+              <option value="Brazil Cerrado">Brazil Cerrado</option>
+              <option value="Decaf Colombian">Decaf Colombian</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Second bean</span>
+            <select id="bean-b">
+              <option value="Ethiopian Yirgacheffe">Ethiopian Yirgacheffe</option>
+              <option value="Colombian Supremo">Colombian Supremo</option>
+              <option value="Sumatra Mandheling">Sumatra Mandheling</option>
+              <option value="Kenya AA">Kenya AA</option>
+              <option value="Guatemala Antigua">Guatemala Antigua</option>
+              <option value="Brazil Cerrado">Brazil Cerrado</option>
+              <option value="Decaf Colombian">Decaf Colombian</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Ratio: <strong id="ratio-label">70% / 30%</strong></span>
+            <input type="range" id="ratio" min="10" max="90" step="5" value="70">
+            <span class="range-hint">Slide to set how much of the first bean goes in.</span>
+          </label>
+          <label class="field">
+            <span>Name your blend</span>
+            <input type="text" id="blend-name" maxlength="40" placeholder="e.g. Morning Rescue">
+          </label>
+          <div class="field">
+            <span>Grind for</span>
+            <div class="grind-pills" role="group" aria-label="Brew method">
+              <button type="button" class="pill is-active" data-grind="Drip">Drip</button>
+              <button type="button" class="pill" data-grind="French Press">French Press</button>
+              <button type="button" class="pill" data-grind="Espresso">Espresso</button>
+            </div>
+          </div>
+        </div>
+        <div class="mixer-preview" aria-live="polite">
+          <p class="preview-eyebrow">Your label</p>
+          <p class="preview-name" id="preview-name">Your Blend</p>
+          <p class="preview-ratio" id="preview-ratio">70% Colombian Supremo, 30% Ethiopian Yirgacheffe</p>
+          <p class="preview-grind" id="preview-grind">Ground for Drip</p>
+          <p class="preview-note">Roast date, flavor notes, and ratio print on your label at the kiosk.</p>
+        </div>
+      </div>
+      <p class="fine-print">Sample beans shown. The dispenser wall will hold 12 to 15 single origins, light to dark, plus decaf.</p>
+    </div>
+  </section>
+
+  <section class="section" id="blends">
+    <div class="wrap">
+      <p class="eyebrow">Retail, ready to go</p>
+      <h2>In a hurry? Grab a house blend.</h2>
+      <p class="section-intro">Pre-bagged, sealed, whole bean or ground. Same beans, same care, no mixing required.</p>
+      <div class="blend-grid">
+        <article class="blend-card">
+          <p class="roast roast-light">Light roast</p>
+          <h3>Plymouth Rock-et Fuel</h3>
+          <p>Bright and lively, built for slow mornings and second cups.</p>
+        </article>
+        <article class="blend-card">
+          <p class="roast roast-dark">Dark French roast</p>
+          <h3>Not A Morning Person</h3>
+          <p>Deep, smoky, and unapologetic. For the mornings that start before you do.</p>
+        </article>
+        <article class="blend-card">
+          <p class="roast roast-dark">Hyper-caffeinated robusta</p>
+          <h3>404 Sleep Not Found</h3>
+          <p>A robusta kick for days when sleep is not on the schedule.</p>
+        </article>
+        <article class="blend-card">
+          <p class="roast roast-medium">Medium roast</p>
+          <h3>Wicked Awake</h3>
+          <p>The crowd pleaser. Smooth, balanced, and hard to get wrong.</p>
+        </article>
+        <article class="blend-card">
+          <p class="roast roast-medium">Medium drip</p>
+          <h3>The Apprentice Cup</h3>
+          <p>Straightforward, no-nonsense drip coffee. The everyday cup, done right.</p>
+        </article>
+        <article class="blend-card">
+          <p class="roast roast-dark">Dark roast</p>
+          <h3>Third Shift</h3>
+          <p>Heavy and dark, made for early mornings and long nights.</p>
+        </article>
+        <article class="blend-card">
+          <p class="roast roast-dark">Bold espresso blend</p>
+          <h3>The Foreman</h3>
+          <p>Bold and full bodied, built to stand up to milk and pull a rich shot.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint" id="tasting">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">DIY Tasting Station</p>
+        <h2>Bought beans? Brew a cup here.</h2>
+        <p>The tasting station is a standing-room counter with a commercial hot water tower and shared brewing gear, pour-overs and French presses. Buy any beans and brew a cup on the spot to taste what you just built.</p>
+        <p>It is free with a bean purchase, and it is the best way to test a blend before you take it home. Shared gear is sanitized between uses.</p>
+      </div>
+      <div>
+        <p class="eyebrow">Brewing gear</p>
+        <h2>Take the ritual home.</h2>
+        <p>Pour-over cones, filters, French presses, and airtight storage canisters. Everything you need to brew your blend the way it was ground for.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="drinkers">
+    <div class="wrap">
+      <p class="eyebrow">Who it is for</p>
+      <h2>Every kind of coffee drinker.</h2>
+      <div class="cards-3">
+        <article class="mini-card">
+          <h3>The Hobbyist</h3>
+          <p>Origin, roast date, and precise grind size. Rotating rare single origins and commercial-grade grinders.</p>
+        </article>
+        <article class="mini-card">
+          <h3>The Gifter and Tourist</h3>
+          <p>A custom label turns a bag of beans into a personal souvenir, named by you and printed on the spot.</p>
+        </article>
+        <article class="mini-card">
+          <h3>The Daily Drinker</h3>
+          <p>Pre-bagged beans and an expedited checkout lane for the morning commute.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="visit">
+    <div class="wrap">
+      <p class="eyebrow">Visit</p>
+      <h2>Find us in Plymouth.</h2>
+      <p class="section-intro">Coffee Happy is coming to Plymouth, Massachusetts, built for year-round locals and summer visitors alike. The exact storefront is being scouted now. Check back for the opening date.</p>
+      <p class="fine-print">Coffee Happy is a retail shop, not a cafe. Buy beans, build blends, and brew at home, or taste your blend at the station.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p><strong>Coffee Happy</strong>, Plymouth, Massachusetts</p>
+    <p class="fine-print">Beans sold by the ounce or pound. Custom blends are labeled with roast date, flavor notes, and bean ratio.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
